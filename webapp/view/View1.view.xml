@@ -1,0 +1,7 @@
+<mvc:View controllerName="testomkarr.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Button press="onSuccessDialog" text = "gvr"></Button>
+    </Page>
+</mvc:View>

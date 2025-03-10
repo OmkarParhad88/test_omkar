@@ -1,0 +1,11 @@
+
+.customDialogContent {
+    padding:1rem; 
+}
+
+.boldText {
+    font-weight: bold;
+    font-size: 1rem;
+    color:#235be8;
+    padding: 0.2rem 0.6rem;
+}

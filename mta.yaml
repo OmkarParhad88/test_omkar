@@ -1,0 +1,42 @@
+---
+general:
+  buildTool: "mta"
+service:
+  buildToolVersion: "MBTJ21N22"
+  stages:
+    Acceptance:
+      cfCredentialsId: "obtp"
+    Release:
+      cfCredentialsId: "obtp"
+stages:
+  Build:
+    mavenExecuteStaticCodeChecks: true
+    npmExecuteLint: true
+  Acceptance:
+    cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
+    cfOrg: "6fa607f4trial"
+    cfSpace: "dev"
+    deployType: "standard"
+    cloudFoundryDeploy: true
+    npmExecuteEndToEndTests: false
+  Malware Scan:
+    malwareExecuteScan: false
+  Release:
+    tmsExport: false
+    tmsUpload: false
+    cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
+    cfOrg: "6fa607f4trial"
+    cfSpace: "dev"
+    deployType: "standard"
+    cloudFoundryDeploy: true
+  Additional Unit Tests:
+    npmExecuteScripts: false
+  Compliance:
+    sonarExecuteScan: false
+steps:
+  cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
+  npmExecuteLint:
+    failOnError: true
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"

@@ -1,6 +1,7 @@
 # app -App
 
-My Bussiness Application first time CICD
+
+My Bussiness Application first time 
 
 
 ## Application Details
